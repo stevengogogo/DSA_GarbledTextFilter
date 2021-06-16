@@ -61,7 +61,8 @@ void kill_que(que*);
 
 void enque(que*, int val);
 int deque(que*);
+int deque_rear(que*);
 int peek_que(que*);
-
+int peek_que_rear(que* q);
 
 #endif

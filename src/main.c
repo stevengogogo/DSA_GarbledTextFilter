@@ -10,9 +10,13 @@ int main()
     que pinT;
     que pinH;
 
-    char text[2000]="okayokayokay";
-    TextCompressMark(text, strlen(text), &pinT, &pinH);
+    char text[2000]="JJJJJJ\0";
+    int textlen = strlen(text);
+    TextCompressMark(text, textlen, &pinT, &pinH);
 
+
+    
+    PrintCompressedText(text, textlen, &pinT, &pinH);
 
     kill_que(&pinT);
     kill_que(&pinH);
