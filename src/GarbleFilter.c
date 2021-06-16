@@ -23,10 +23,20 @@ void add_obs(char c, occurText* oc){
 
 void del_obs(char c, occurText* oc){
     int asc = str2ascii(c);
-    --oc->obs[asc];
-    assert(oc->obs[asc]>=0);
+    if(oc->obs[asc]>0)
+        --oc->obs[asc];
+    //assert(oc->obs[asc]>=0);
     if(oc->obs[asc] < oc->occur[asc] && oc->occur[asc] !=0){
         --oc->nexceed;
+    }
+}
+
+bool satisfied_obs(occurText oc){
+    if(oc.nexceed>=oc.noccur){
+        return true;
+    }
+    else{
+        return false;
     }
 }
 
@@ -42,4 +52,40 @@ void get_region_occurrence(char* text,occurText* oc, int str, int end){
         if(oc->occur[asc]==0){++oc->noccur;}
         ++(oc->occur[asc]);
     }
+}
+
+bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText* oc){
+    //Move one step forward
+    if(*tail==textlen-1)
+        return 0;
+    else{
+        del_obs(text[*tail], oc);
+        ++(*tail);
+    }
+
+    //move head
+    if (*head < *tail){ *head = *tail; }
+    bool satisfied = satisfied_obs(*oc);
+    while(*head < textlen && !satisfied){
+        ++(*head);
+        add_obs(text[*head], oc);
+        satisfied = satisfied_obs(*oc);
+    }
+
+    if(!satisfied)
+        return false;
+
+    //Move tail
+    while(*tail<=*head && satisfied){
+        del_obs(text[*tail], oc);
+        ++(*tail);
+        satisfied = satisfied_obs(*oc);
+    }
+
+    //Tail: One step back
+    --(*tail);
+    add_obs(text[*tail], oc);
+
+    assert(satisfied_obs(*oc) == true);
+    return true;
 }
