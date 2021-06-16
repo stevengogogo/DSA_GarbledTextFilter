@@ -1,3 +1,14 @@
+/**
+ * @file test_GarbleFilter.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-06-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #ifndef TEST_GARBLEFILTER_H
 #define TEST_GARBLEFILTER_H
 #include <string.h>
@@ -31,6 +42,14 @@ void text_occurrence(void){
     TEST_CHECK(oc.occur[str2ascii('y')] == 1);
     TEST_CHECK(oc.nexceed == 0);
     TEST_CHECK(oc.noccur == 10);
+
+    //Add obs
+    add_obs('h', &oc);
+    TEST_CHECK(oc.obs[str2ascii('h')] == 1);
+    TEST_CHECK(oc.nexceed == 1);
+    del_obs('h', &oc);
+    TEST_CHECK(oc.obs[str2ascii('h')] == 0);
+    TEST_CHECK(oc.nexceed == 0);
 }
 
 

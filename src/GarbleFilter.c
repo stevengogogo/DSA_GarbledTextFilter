@@ -13,6 +13,23 @@ occurText init_occurText(){
     return oc;
 }
 
+void add_obs(char c, occurText* oc){
+    int asc = str2ascii(c);
+    ++oc->obs[asc];
+    if(oc->obs[asc] >= oc->occur[asc] && oc->occur[asc] !=0){
+        ++oc->nexceed;
+    }
+}
+
+void del_obs(char c, occurText* oc){
+    int asc = str2ascii(c);
+    --oc->obs[asc];
+    assert(oc->obs[asc]>=0);
+    if(oc->obs[asc] < oc->occur[asc] && oc->occur[asc] !=0){
+        --oc->nexceed;
+    }
+}
+
 int str2ascii(char chr){
     return chr;
 }

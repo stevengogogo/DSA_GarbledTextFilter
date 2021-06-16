@@ -3,6 +3,7 @@
 #define N_ASCII_ELEMENT 128
 
 #include <string.h>
+#include <assert.h>
 
 typedef struct {
     int occur[N_ASCII_ELEMENT];
@@ -12,6 +13,8 @@ typedef struct {
 } occurText;
 
 occurText init_occurText();
+void add_obs(char, occurText*);
+void del_obs(char, occurText*);
 
 //Preprocessing: Garble Text
 int str2ascii(char);
