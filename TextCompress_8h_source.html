@@ -75,13 +75,16 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define Q_ 1000081</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define INIT_PIN_SIZE 10000</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> TextCompressMark(<span class="keywordtype">char</span>* text, <span class="keywordtype">int</span> textlen, <a class="code" href="structque.html">que</a>* pinT, <a class="code" href="structque.html">que</a>* pinH);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> update_hash(<span class="keywordtype">char</span> , <span class="keywordtype">int</span>* cur_hash, <span class="keywordtype">int</span>* cur_len, <span class="keywordtype">int</span>* H);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> clear_hash(<span class="keywordtype">int</span>* cur_hash, <span class="keywordtype">int</span>* cur_len, <span class="keywordtype">int</span>* H);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> TextCompressMark(<span class="keywordtype">char</span>* text, <span class="keywordtype">int</span> textlen, <a class="code" href="structque.html">que</a>* pinT, <a class="code" href="structque.html">que</a>* pinH);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> update_hash(<span class="keywordtype">char</span> , <span class="keywordtype">int</span>* cur_hash, <span class="keywordtype">int</span>* cur_len, <span class="keywordtype">int</span>* H, <span class="keywordtype">bool</span> rev);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> clear_hash(<span class="keywordtype">int</span>* cur_hash, <span class="keywordtype">int</span>* cur_len, <span class="keywordtype">int</span>* H);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> PrintCompressedText(<span class="keywordtype">char</span>* text, <span class="keywordtype">int</span> textlen, <a class="code" href="structque.html">que</a>* pinT, <a class="code" href="structque.html">que</a>* pinH);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructque_html"><div class="ttname"><a href="structque.html">que</a></div><div class="ttdef"><b>Definition:</b> utils.h:53</div></div>
 <div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div><div class="ttdoc">General Utilities for C language.</div></div>
 </div><!-- fragment --></div><!-- contents -->
