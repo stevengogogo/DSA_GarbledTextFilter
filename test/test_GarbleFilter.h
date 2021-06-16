@@ -29,6 +29,8 @@ void text_occurrence(void){
     TEST_CHECK(oc.occur[str2ascii('o')] == 2);
     TEST_CHECK(oc.occur[str2ascii('a')] == 3);
     TEST_CHECK(oc.occur[str2ascii('y')] == 1);
+    TEST_CHECK(oc.nexceed == 0);
+    TEST_CHECK(oc.noccur == 10);
 }
 
 

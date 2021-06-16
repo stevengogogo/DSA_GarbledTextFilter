@@ -8,6 +8,7 @@ typedef struct {
     int occur[N_ASCII_ELEMENT];
     int obs[N_ASCII_ELEMENT];
     int nexceed;
+    int noccur;
 } occurText;
 
 occurText init_occurText();

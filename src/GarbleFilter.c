@@ -9,6 +9,7 @@ occurText init_occurText(){
         oc.obs[i] = 0;
     }
     oc.nexceed = 0;
+    oc.noccur = 0;
     return oc;
 }
 
@@ -21,6 +22,7 @@ void get_region_occurrence(char* text,occurText* oc, int str, int end){
     int asc;
     for(int i=str;i<=end;i++){
         asc = str2ascii(text[i]);
+        if(oc->occur[asc]==0){++oc->noccur;}
         ++(oc->occur[asc]);
     }
 }
