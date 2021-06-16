@@ -23,8 +23,9 @@ void add_obs(char c, occurText* oc){
 
 void del_obs(char c, occurText* oc){
     int asc = str2ascii(c);
-    --oc->obs[asc];
-    assert(oc->obs[asc]>=0);
+    if(oc->obs[asc]>0)
+        --oc->obs[asc];
+    //assert(oc->obs[asc]>=0);
     if(oc->obs[asc] < oc->occur[asc] && oc->occur[asc] !=0){
         --oc->nexceed;
     }
@@ -63,6 +64,7 @@ bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText
     }
 
     //move head
+    if (*head < *tail){ *head = *tail; }
     bool satisfied = satisfied_obs(*oc);
     while(*head < textlen && !satisfied){
         ++(*head);
@@ -75,8 +77,8 @@ bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText
 
     //Move tail
     while(*tail<=*head && satisfied){
-        ++(*tail);
         del_obs(text[*tail], oc);
+        ++(*tail);
         satisfied = satisfied_obs(*oc);
     }
 
@@ -85,5 +87,5 @@ bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText
     add_obs(text[*tail], oc);
 
     assert(satisfied_obs(*oc) == true);
-    return satisfied;
+    return true;
 }
