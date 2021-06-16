@@ -6,11 +6,15 @@
 #include "utils.h"
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 void TextCompressMark(char* text, int textlen, que* pinT, que* pinH);
 void update_hash(char , int* cur_hash, int* cur_len, int* H, bool rev);
 void clear_hash(int* cur_hash, int* cur_len, int* H);
 
 void PrintCompressedText(char* text, int textlen, que* pinT, que* pinH);
+
+/** Wrapped function*/
+void DisplayCompressedText(char* text);
 
 #endif

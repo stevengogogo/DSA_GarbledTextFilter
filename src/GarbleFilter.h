@@ -50,9 +50,5 @@ void GarbleTextFilter(char* text, char* garble);
 
 
 
-static int interface(){
-
-}
-
 
 #endif

@@ -70,3 +70,14 @@ void PrintCompressedText(char* text, int textlen, que* pinT, que* pinH){
         }
     }
 }
+
+void DisplayCompressedText(char* text){
+    int textlen = strlen(text);
+    que pinT, pinH;
+
+    TextCompressMark(text, textlen, &pinT, &pinH);
+    PrintCompressedText(text, textlen, &pinT, &pinH);
+
+    kill_que(&pinT);
+    kill_que(&pinH);
+}
