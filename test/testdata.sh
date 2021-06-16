@@ -17,7 +17,7 @@ do
         echo "$(tput setaf 2; tput bold)Pass $(tput sgr0)";
     else
         echo "Failed (Compare: EST / Real)"; 
-        diff -y test/data/$i-EST.out test/data/$i.out;
+        diff -y test/data/$i-EST.oute test/data/$i.out;
         echo " "
         
     fi
