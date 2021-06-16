@@ -3,16 +3,16 @@
 echo ""
 echo "$(tput setaf 2; tput bold)Start test: Input/Output $(tput sgr0)"
 
-for i in {1..3};
+for i in {1..4};
 do
     echo ""
     echo "$(tput setaf 5)Test File: $i.in$(tput sgr0)";
 
 
-    ./build/main.out < test/data/$i.in ""  > test/data/$i-EST.out; 
+    ./build/main.out < test/data/$i.in ""  > test/data/$i-EST.oute; 
 
 
-    if diff -q test/data/$i-EST.out test/data/$i.out;
+    if diff -q test/data/$i-EST.oute test/data/$i.out;
     then
         echo "$(tput setaf 2; tput bold)Pass $(tput sgr0)";
     else
