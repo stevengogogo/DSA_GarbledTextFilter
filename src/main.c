@@ -5,21 +5,40 @@
 #include "utils.h"
 #include "TextCompress.h"
 
+
+int interface(){
+    int N;
+    char text[MAX_STR_LEN];
+    char garble[MAX_STR_LEN];
+    int textlen;
+    int garblelen;
+    scanf("%d", &N);
+
+    for(int i=0;i<N;i++){
+
+        scanf("%s", text);
+        scanf("%s", garble);
+
+        GarbleTextFilter(text, garble);
+        DisplayCompressedText(text);
+
+        //if(i!=N-1)
+            printf("\n");
+    }
+}
+
 int main()
 {
+    /*
     que pinT;
     que pinH;
 
-    char text[2000]="JJJJJJ\0";
-    int textlen = strlen(text);
-    TextCompressMark(text, textlen, &pinT, &pinH);
+    char text[4000]="CCRRRWCRRRRRWQAWRVRCECCrCCRCWWWVWgCCCCCCiCCEWRCCCRCRWRRRRCWWWWRCCWWRRWCWRRWUWRCRCRWCWWgWWRRoWCWTCRRCWWCRWWRCWCCRCCCCRNWCRCRWcRWCXWRCRWWCCWRRRVWWRCCCCOCDCCCWRWCRRWCURhWCRRCCWCRRCWRCWFRRCRRCRCNWRCCCCOCRCRRCCCRRCRCWRWCWRCCCCDCRWRCCWCWCWCCCRRCWRWWCWCCWZRkRWCRCjMRRCWRCWVCWYWCWCWVCRRCCRRNWaJECRCCWCWWRCCRnRRRWWCCCRRRWCWoWCdCRCECCCWWRCCWCCWRRCRWRRWRjWRCmCWnCRCCRRWWRWCKCRRWRgWWWCtRWNCGARWCCrRCCRCrWCCRRCWiHWWWWRCRWRRJDCCCBRRWRRpCWWRRRRRsCCnRWRWRCCRRCCCWCRCCWxRRWRPCWWRRRWWRCCWRRWRWCRHCbCRCRRRCCWCRCWRWRWWCWCWCCWWCWCCWRWWWRCCWRWWWRWdCRCaRRNERCRWMRRWRCNCRRkCyWCRCCWRWCCCRWiRCWCCRWWRWCRRWWCCCWWRCRCRRCCRRRLhORRWCWJCRWCWNUWCpWECWCWWCCCWeCRRRRCCCRMCRWWRHCWCiCWCCCRPRRcWCWWCWWHFWCRaRCCRR\0";
 
-
-    
-    PrintCompressedText(text, textlen, &pinT, &pinH);
-
-    kill_que(&pinT);
-    kill_que(&pinH);
+    TextCompressMark(text, strlen(text), &pinT, &pinH);
 
     return 0;
+    */
+
+    return interface();
 }

@@ -15,18 +15,30 @@ occurText init_occurText(){
 
 void add_obs(char c, occurText* oc){
     int asc = str2ascii(c);
+    bool rec = false;
+    
+    if (oc->obs[asc] >= oc->occur[asc] && oc->occur[asc] >0){
+        rec = true;
+    }
+
     ++oc->obs[asc];
-    if(oc->obs[asc] >= oc->occur[asc] && oc->occur[asc] !=0){
+
+    if(oc->obs[asc] >= oc->occur[asc] && oc->occur[asc] >0 && !rec){
         ++oc->nexceed;
     }
 }
 
 void del_obs(char c, occurText* oc){
     int asc = str2ascii(c);
-    if(oc->obs[asc]>0)
-        --oc->obs[asc];
+    bool rec = false;
+    if (oc->obs[asc] < oc->occur[asc] && oc->occur[asc] > 0){
+        rec = true;
+    }
+
+    if(oc->obs[asc]>0){ --oc->obs[asc];}
+
     //assert(oc->obs[asc]>=0);
-    if(oc->obs[asc] < oc->occur[asc] && oc->occur[asc] !=0){
+    if(oc->obs[asc] < oc->occur[asc] && oc->occur[asc] > 0 && !rec){
         --oc->nexceed;
     }
 }
@@ -55,13 +67,16 @@ bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText
     //Move one step forward
     if(*tail==textlen-1)
         return 0;
+    else if (*tail==-1){
+        ++(*tail);
+    }
     else{
         del_obs(text[*tail], oc);
         ++(*tail);
     }
 
     //move head
-    if (*head < *tail){ *head = *tail; }
+    //if (*head ==-1){ *head = 0; }
     bool satisfied = satisfied_obs(*oc);
     while(*head < textlen && !satisfied){
         ++(*head);
