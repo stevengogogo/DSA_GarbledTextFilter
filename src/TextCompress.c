@@ -24,8 +24,8 @@ void TextCompressMark(char* text, int textlen, que* pinT, que* pinH){
             clear_hash(&hashh, &lenh, &Hh);
             clear_hash(&hasht, &lent, &Ht);
         }
-        ++head;
-        --tail;
+        --head;
+        ++tail;
     }
 
 }
