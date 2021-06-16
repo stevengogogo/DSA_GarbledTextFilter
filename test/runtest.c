@@ -23,5 +23,6 @@ TEST_LIST = {
     //Text compression
     {"Text compression: hash", text_hash},
     {"Text compression: print", text_compressed},
+    {"Text compression: print2", test_compressed2},
     {NULL, NULL} // Terminate the test
 };
