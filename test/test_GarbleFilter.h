@@ -50,6 +50,9 @@ void text_occurrence(void){
     del_obs('h', &oc);
     TEST_CHECK(oc.obs[str2ascii('h')] == 0);
     TEST_CHECK(oc.nexceed == 0);
+
+    TEST_CHECK(oc.obs[str2ascii('z')] == 0);
+    TEST_CHECK(oc.nexceed == 0);
 }
 
 
