@@ -52,21 +52,21 @@ void clear_hash(int* cur_hash, int* cur_len, int* H){
 
 void PrintCompressedText(char* text, int textlen, que* pinT, que* pinH){
     int last = peek_que(pinT);
+    bool dup = true;//avoid `||`
     for(int i=0;i<textlen;i++){
         
-        if(i == peek_que(pinH) && last+1 != peek_que(pinH)){
-            printf("|");
-            deque(pinH);
+       
+        if(i == peek_que_rear(pinH)){
+            if(!dup){printf("|"); dup = true;}
+            deque_rear(pinH);
         }
 
         printf("%c", text[i]);
+        dup = false;
 
         if(i==peek_que(pinT)){
-            last = peek_que(pinT);
-            printf("|");
+            if(!dup){printf("|"); dup = true;}
             deque(pinT);
         }
-
-
     }
 }

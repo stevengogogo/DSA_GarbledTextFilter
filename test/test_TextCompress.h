@@ -28,5 +28,28 @@ void text_hash(void){
     kill_que(&pinH);
 }
 
+void text_compressed(void){
+    que pinT;
+    que pinH;
+
+    char text[2000]="JJJJJJ\0";
+    int textlen = strlen(text);
+    TextCompressMark(text, textlen, &pinT, &pinH);
+
+
+    TEST_CHECK(pinT.head == 0); TEST_MSG("Got %d", pinT.head);
+    TEST_CHECK(pinH.head == 0); TEST_MSG("Got %d", pinH.head);
+    TEST_CHECK(pinT.tail == 2); TEST_MSG("Got %d", pinT.tail);
+    TEST_CHECK(pinH.tail == 2); TEST_MSG("Got %d", pinH.tail);
+
+    TEST_CHECK(peek_que(&pinT) == 0);
+    TEST_CHECK(peek_que(&pinH) == 5);
+
+    PrintCompressedText(text, textlen, &pinT, &pinH);
+
+    kill_que(&pinT);
+    kill_que(&pinH);
+}
+
 
 #endif

@@ -22,5 +22,6 @@ TEST_LIST = {
     {"Garble text filter", text_garblefilter},
     //Text compression
     {"Text compression: hash", text_hash},
+    {"Text compression: print", text_compressed},
     {NULL, NULL} // Terminate the test
 };
