@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "GarbleFilter.h"
 #include "utils.h"
+#include "TextCompress.h"
 
 int main()
 {
