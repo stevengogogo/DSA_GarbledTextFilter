@@ -36,6 +36,8 @@ void get_region_occurrence(char*, occurText*, int str, int end);
 */
 bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText*);
 
+bool leftist_smallest_garble_region(char* text, int textlen, char* garble, int garblelen, int* tail, int* head);
+
 static int interface(){
 
 }
