@@ -10,5 +10,6 @@ TEST_LIST = {
     {"Utility", test_utils},
     {"Ascii convertion", test_ascii},
     {"Get occurrence", text_occurrence},
+    {"Find garble text", find_garble_text},
     {NULL, NULL} // Terminate the test
 };

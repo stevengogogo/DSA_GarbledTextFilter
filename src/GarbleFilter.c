@@ -63,7 +63,27 @@ bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText
     }
 
     //move head
-    while(*head < textlen && oc->nexceed){
-        
+    bool satisfied = satisfied_obs(*oc);
+    while(*head < textlen && !satisfied){
+        ++(*head);
+        add_obs(text[*head], oc);
+        satisfied = satisfied_obs(*oc);
     }
+
+    if(!satisfied)
+        return false;
+
+    //Move tail
+    while(*tail<=*head && satisfied){
+        ++(*tail);
+        del_obs(text[*tail], oc);
+        satisfied = satisfied_obs(*oc);
+    }
+
+    //Tail: One step back
+    --(*tail);
+    add_obs(text[*tail], oc);
+
+    assert(satisfied_obs(*oc) == true);
+    return satisfied;
 }

@@ -55,6 +55,37 @@ void text_occurrence(void){
     TEST_CHECK(oc.nexceed == 0);
 }
 
+void find_garble_text(void){
+    char text[2000] = "DSARANDOMTEXTISSOHARD\0";
+    char garble[2000] = "RTTX\0";
+    int head = 0;
+    int tail = 0;
+    occurText oc = init_occurText();
+    get_region_occurrence(garble, &oc, 0, strlen(garble)-1);
+
+
+    bool sat = next_garble_region(text, &tail, &head, strlen(text), &oc);
+
+    //TEST
+    //PIN
+    TEST_CHECK(head == 12);
+    TEST_CHECK(tail==3);
+    //Observation
+    TEST_CHECK(oc.obs[str2ascii('R')]==1);
+    TEST_CHECK(oc.obs[str2ascii('T')]==2);
+    TEST_CHECK(oc.obs[str2ascii('X')]==1);
+    //Valid
+    TEST_CHECK(oc.nexceed == oc.noccur);
+    TEST_CHECK(sat == true);
+    //Occurrence
+    TEST_CHECK(oc.occur[str2ascii('R')] == 1);   
+    TEST_CHECK(oc.occur[str2ascii('T')] == 2);   
+    TEST_CHECK(oc.occur[str2ascii('X')] == 1);   
+    TEST_CHECK(oc.occur[str2ascii('z')] == 0);
+    TEST_CHECK(oc.noccur == 3);
+
+}
+
 
 
 
