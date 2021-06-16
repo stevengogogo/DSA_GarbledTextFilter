@@ -1,7 +1,7 @@
 #ifndef GARBLEFILTER_H
 #define GARBLEFILTER_H
 #define N_ASCII_ELEMENT 128
-
+#define MAX_STR_LEN 150000
 #include <string.h>
 #include <assert.h>
 #include <stdbool.h>
@@ -35,6 +35,19 @@ void get_region_occurrence(char*, occurText*, int str, int end);
  * @return 0 no gable text retion left; 1: found garble text
 */
 bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText*);
+
+bool leftist_smallest_garble_region(char* text, int textlen, char* garble, int garblelen, int* tail, int* head);
+
+/**slice the region [tail, head]*/
+void slice_text(char* text, int tail, int head, int textlen);
+
+/**
+ * @brief Filter text with garble text
+ * 
+ * @param text Main string with '\0' end
+ * @param garble Garble pattern with '\0' end
+ */
+void GarbleTextFilter(char* text, char* garble);
 
 static int interface(){
 

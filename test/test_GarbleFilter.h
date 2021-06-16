@@ -111,7 +111,46 @@ void find_garble_text(void){
 
 }
 
+void find_leftsmall_garble_text(void){
+    char text[2000] = "DSARANDOMTEXTISSOHARD\0";
+    char garble[2000] = "RTTX\0";
+    int head, tail;
+
+    bool sat1 = leftist_smallest_garble_region(text, strlen(text), garble, strlen(garble), &tail, &head);
 
 
+    TEST_CHECK(sat1==true);
+    TEST_CHECK(tail == 3);
+    TEST_CHECK(head == 12);
+}
+
+void find_leftsmall_garble_text2(void){
+    char text[2000] = "Nooo\0";
+    char garble[2000] = "oo\0";
+    int head, tail;
+
+    bool sat1 = leftist_smallest_garble_region(text, strlen(text), garble, strlen(garble), &tail, &head);
+
+
+    TEST_CHECK(sat1==true);
+    TEST_CHECK(tail == 1);
+    TEST_CHECK(head == 2);
+}
+
+void test_slice_text(void){
+    char text[2000] = "NooStevengogogo\0";
+    slice_text(text, 1,8, strlen(text));
+    TEST_CHECK(strcmp(text, "Ngogogo\0")==0);
+    TEST_CHECK(strlen(text)==7);
+    TEST_MSG("Got %s", text);
+}
+
+void text_garblefilter(void){
+    char text[2000] = "DSARANDOMTEXTISSOHARD\0";
+    char garble[2000] = "RTTX\0";
+    GarbleTextFilter(text, garble);
+    TEST_CHECK(strcmp(text,"DSAISSOHARD\0")==0);
+    TEST_MSG("Got %s", text);
+}
 
 #endif

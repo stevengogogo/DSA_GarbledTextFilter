@@ -89,3 +89,50 @@ bool next_garble_region(char* text, int* tail, int* head, int textlen, occurText
     assert(satisfied_obs(*oc) == true);
     return true;
 }
+
+bool leftist_smallest_garble_region(char* text, int textlen, char* garble, int garblelen, int* tail, int* head){
+    int t=-1;
+    int h=-1;
+    bool sat;
+    int len_ori;
+    int len_cur;
+    occurText oc = init_occurText();
+    
+    get_region_occurrence(garble, &oc, 0, garblelen-1);
+
+    sat = next_garble_region(text, &t, &h, textlen, &oc);
+    *tail = t; *head = h;//record the region
+    
+    if(!sat)
+        return false;
+
+    while(sat){
+        sat = next_garble_region(text, &t, &h, textlen, &oc);
+        if(sat){
+            len_cur = h - t + 1;
+            len_ori = *head - *tail + 1;
+            //find smaller region
+            if(len_cur<len_ori){ *head = h; *tail = t;}
+        }
+    }
+
+    return true;
+}
+
+void slice_text(char* text, int tail, int head, int textlen){
+    int len = head - tail + 1;
+    for(int i=head+1;i<=textlen;i++){
+        text[i-len] = text[i];
+    }
+}
+
+
+void GarbleTextFilter(char* text, char* garble){
+    int textlen = strlen(text);
+    int garblelen = strlen(garble);
+    int tail, head;
+    bool sat = leftist_smallest_garble_region(text, textlen, garble, garblelen, &tail, &head);
+
+    if(sat)
+        slice_text(text, tail, head, textlen);
+}
