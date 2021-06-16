@@ -118,3 +118,10 @@ bool leftist_smallest_garble_region(char* text, int textlen, char* garble, int g
 
     return true;
 }
+
+void slice_text(char* text, int tail, int head, int textlen){
+    int len = head - tail + 1;
+    for(int i=head+1;i<=textlen;i++){
+        text[i-len] = text[i];
+    }
+}

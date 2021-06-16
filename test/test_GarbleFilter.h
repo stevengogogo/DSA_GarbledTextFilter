@@ -137,5 +137,11 @@ void find_leftsmall_garble_text2(void){
     TEST_CHECK(head == 2);
 }
 
+void test_slice_text(void){
+    char text[2000] = "NooStevengogogo\0";
+    slice_text(text, 0,2, strlen(text));
+    TEST_CHECK(strcmp(text, "Stevengogogo\0")==0);
+    TEST_MSG("Got %s", text);
+}
 
 #endif

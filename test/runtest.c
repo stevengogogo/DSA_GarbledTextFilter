@@ -13,5 +13,6 @@ TEST_LIST = {
     {"Find garble text", find_garble_text},
     {"Find smallest leftest garble region",find_leftsmall_garble_text},
     {"Find smallest leftest garble region 2",find_leftsmall_garble_text2},
+    {"Slice text", test_slice_text},
     {NULL, NULL} // Terminate the test
 };
