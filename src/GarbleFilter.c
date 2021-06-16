@@ -125,3 +125,14 @@ void slice_text(char* text, int tail, int head, int textlen){
         text[i-len] = text[i];
     }
 }
+
+
+void GarbleTextFilter(char* text, char* garble){
+    int textlen = strlen(text);
+    int garblelen = strlen(garble);
+    int tail, head;
+    bool sat = leftist_smallest_garble_region(text, textlen, garble, garblelen, &tail, &head);
+
+    if(sat)
+        slice_text(text, tail, head, textlen);
+}

@@ -41,6 +41,14 @@ bool leftist_smallest_garble_region(char* text, int textlen, char* garble, int g
 /**slice the region [tail, head]*/
 void slice_text(char* text, int tail, int head, int textlen);
 
+/**
+ * @brief Filter text with garble text
+ * 
+ * @param text Main string with '\0' end
+ * @param garble Garble pattern with '\0' end
+ */
+void GarbleTextFilter(char* text, char* garble);
+
 static int interface(){
 
 }
