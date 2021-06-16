@@ -9,6 +9,7 @@
 #include <string.h>
 
 void TextCompressMark(char* text, int textlen, que* pinT, que* pinH);
+bool solve_spurious(char* text, int textlen,int tail, int head, que* pinT, que* pinH);
 void update_hash(char , int* cur_hash, int* cur_len, int* H, bool rev);
 void clear_hash(int* cur_hash, int* cur_len, int* H);
 

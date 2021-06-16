@@ -29,6 +29,7 @@ int interface(){
 
 int main()
 {
+    /*
     que pinT;
     que pinH;
 
@@ -37,6 +38,7 @@ int main()
     TextCompressMark(text, strlen(text), &pinT, &pinH);
 
     return 0;
+    */
 
-    //return interface();
+    return interface();
 }

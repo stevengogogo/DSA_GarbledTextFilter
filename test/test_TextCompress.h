@@ -60,6 +60,10 @@ void test_compressed2(void){
     TextCompressMark(text, strlen(text), &pinT, &pinH);
     TEST_CHECK(pinT.arr.len == 2); TEST_MSG("Got %d", pinT.arr.len);
     TEST_CHECK(pinH.arr.len == 2); TEST_MSG("Got %d", pinH.arr.len);
+
+    TEST_CHECK(pinT.arr.i[0] == 3);
+    TEST_CHECK(pinT.arr.i[1] == 4);
+
 }
 
 #endif
