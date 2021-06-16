@@ -21,8 +21,10 @@ int interface(){
 
         GarbleTextFilter(text, garble);
         DisplayCompressedText(text);
-    }
 
+        if(i!=N-1)
+            printf("\n");
+    }
 }
 
 int main()
