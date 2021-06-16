@@ -66,6 +66,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">utils.h File Reference</div>  </div>
@@ -74,23 +76,94 @@ $(function() {
 
 <p>General Utilities for C language.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for utils.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h__incl.png" border="0" usemap="#asrc_2utils_8h" alt=""/></div>
+<map name="asrc_2utils_8h" id="asrc_2utils_8h">
+<area shape="rect" title="General Utilities for C language." alt="" coords="41,5,120,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,68,107"/>
+<area shape="rect" title=" " alt="" coords="92,80,160,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8h__dep__incl.png" border="0" usemap="#asrc_2utils_8hdep" alt=""/></div>
 <map name="asrc_2utils_8hdep" id="asrc_2utils_8hdep">
-<area shape="rect" title="General Utilities for C language." alt="" coords="21,5,100,32"/>
-<area shape="rect" href="test__utils_8h_source.html" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" title="General Utilities for C language." alt="" coords="232,5,311,32"/>
+<area shape="rect" href="GarbleFilter_8h_source.html" title=" " alt="" coords="5,80,127,107"/>
+<area shape="rect" href="test__GarbleFilter_8h.html" title=" " alt="" coords="42,155,197,181"/>
+<area shape="rect" href="TextCompress_8h_source.html" title=" " alt="" coords="202,80,341,107"/>
+<area shape="rect" href="test__TextCompress_8h_source.html" title=" " alt="" coords="230,155,401,181"/>
+<area shape="rect" href="test__utils_8h_source.html" title=" " alt="" coords="416,80,527,107"/>
 </map>
 </div>
 </div>
 <p><a href="utils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdymArr.html">dymArr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structque.html">que</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a72aba4c24081d136220e62ae659061ce"><td class="memItemLeft" align="right" valign="top"><a id="a72aba4c24081d136220e62ae659061ce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EMTY_QUE_SIG</b>&#160;&#160;&#160;-121242</td></tr>
+<tr class="separator:a72aba4c24081d136220e62ae659061ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3e079b9cd38e23deb1f09f3c6f9e05"><td class="memItemLeft" align="right" valign="top"><a id="a8a3e079b9cd38e23deb1f09f3c6f9e05"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>N_ASCII_ELEMENT</b>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:a8a3e079b9cd38e23deb1f09f3c6f9e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ce36916c399104e18d32ff090f21c6"><td class="memItemLeft" align="right" valign="top"><a id="a58ce36916c399104e18d32ff090f21c6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_STR_LEN</b>&#160;&#160;&#160;150000</td></tr>
+<tr class="separator:a58ce36916c399104e18d32ff090f21c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a692a666940c824b0c4863a9faa989219"><td class="memItemLeft" align="right" valign="top"><a id="a692a666940c824b0c4863a9faa989219"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>str2ascii</b> (char)</td></tr>
+<tr class="separator:a692a666940c824b0c4863a9faa989219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fa7fd55f201216ebf7800abb1c427a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a1fa7fd55f201216ebf7800abb1c427a8">argmax</a> (int a, int b)</td></tr>
 <tr class="memdesc:a1fa7fd55f201216ebf7800abb1c427a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argmax function with intergers.  <a href="utils_8h.html#a1fa7fd55f201216ebf7800abb1c427a8">More...</a><br /></td></tr>
 <tr class="separator:a1fa7fd55f201216ebf7800abb1c427a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b09c5f82df6a79a81beec5df81ae301"><td class="memItemLeft" align="right" valign="top"><a id="a5b09c5f82df6a79a81beec5df81ae301"></a>
+<a class="el" href="structdymArr.html">dymArr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>init_Arr</b> (int size)</td></tr>
+<tr class="separator:a5b09c5f82df6a79a81beec5df81ae301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a996b87f91f3f2468acef75e3e8c8f8fb"><td class="memItemLeft" align="right" valign="top"><a id="a996b87f91f3f2468acef75e3e8c8f8fb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>kill_dymArr</b> (<a class="el" href="structdymArr.html">dymArr</a> *)</td></tr>
+<tr class="separator:a996b87f91f3f2468acef75e3e8c8f8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147fe6c3178cfa0639a58b0b16c0a0ff"><td class="memItemLeft" align="right" valign="top"><a id="a147fe6c3178cfa0639a58b0b16c0a0ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_Arr</b> (<a class="el" href="structdymArr.html">dymArr</a> *)</td></tr>
+<tr class="separator:a147fe6c3178cfa0639a58b0b16c0a0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea2f7a53f848eab32c432864338205b"><td class="memItemLeft" align="right" valign="top"><a id="a4ea2f7a53f848eab32c432864338205b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>append_dymArr</b> (<a class="el" href="structdymArr.html">dymArr</a> *, int val)</td></tr>
+<tr class="separator:a4ea2f7a53f848eab32c432864338205b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e5006c31331fa7105846623450a1ba"><td class="memItemLeft" align="right" valign="top"><a id="ac1e5006c31331fa7105846623450a1ba"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>get_item</b> (<a class="el" href="structdymArr.html">dymArr</a>, int i)</td></tr>
+<tr class="separator:ac1e5006c31331fa7105846623450a1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e8d2cc8816925b320ba33f4dcea5e6"><td class="memItemLeft" align="right" valign="top"><a id="a49e8d2cc8816925b320ba33f4dcea5e6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pop_item</b> (<a class="el" href="structdymArr.html">dymArr</a> *)</td></tr>
+<tr class="separator:a49e8d2cc8816925b320ba33f4dcea5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71599cf8cb2a2fdc6008e1f9b85b2196"><td class="memItemLeft" align="right" valign="top"><a id="a71599cf8cb2a2fdc6008e1f9b85b2196"></a>
+<a class="el" href="structque.html">que</a>&#160;</td><td class="memItemRight" valign="bottom"><b>init_que</b> (int size)</td></tr>
+<tr class="separator:a71599cf8cb2a2fdc6008e1f9b85b2196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cac61225dc12f363aa723e6f926b873"><td class="memItemLeft" align="right" valign="top"><a id="a2cac61225dc12f363aa723e6f926b873"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>kill_que</b> (<a class="el" href="structque.html">que</a> *)</td></tr>
+<tr class="separator:a2cac61225dc12f363aa723e6f926b873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4aa0fda79dc2cae4ba34aa095082e90"><td class="memItemLeft" align="right" valign="top"><a id="ad4aa0fda79dc2cae4ba34aa095082e90"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>enque</b> (<a class="el" href="structque.html">que</a> *, int val)</td></tr>
+<tr class="separator:ad4aa0fda79dc2cae4ba34aa095082e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879e84483c40f8866f47191f994e252f"><td class="memItemLeft" align="right" valign="top"><a id="a879e84483c40f8866f47191f994e252f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>deque</b> (<a class="el" href="structque.html">que</a> *)</td></tr>
+<tr class="separator:a879e84483c40f8866f47191f994e252f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b191739f4a136f99847f2e4aca6ac3"><td class="memItemLeft" align="right" valign="top"><a id="a97b191739f4a136f99847f2e4aca6ac3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>peek_que</b> (<a class="el" href="structque.html">que</a> *)</td></tr>
+<tr class="separator:a97b191739f4a136f99847f2e4aca6ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>General Utilities for C language. </p>
