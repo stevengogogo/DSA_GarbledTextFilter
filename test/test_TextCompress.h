@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include "GarbleFilter.h"
+#ifndef TEST_TEXTCOMPRESS_H
+#define TEST_TEXTCOMPRESS_H
+#include "acutest.h"
+#include "TextCompress.h"
 #include "utils.h"
+#include <string.h>
 
-int main()
-{
+void text_hash(void){
     que pinT;
     que pinH;
 
@@ -15,6 +15,7 @@ int main()
 
     kill_que(&pinT);
     kill_que(&pinH);
-
-    return 0;
 }
+
+
+#endif

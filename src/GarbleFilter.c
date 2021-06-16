@@ -40,9 +40,6 @@ bool satisfied_obs(occurText oc){
     }
 }
 
-int str2ascii(char chr){
-    return chr;
-}
 
 void get_region_occurrence(char* text,occurText* oc, int str, int end){
     int i = str;

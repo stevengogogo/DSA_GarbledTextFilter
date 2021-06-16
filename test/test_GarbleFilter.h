@@ -14,7 +14,7 @@
 #include <string.h>
 #include "acutest.h"
 #include "GarbleFilter.h"
-
+#include "utils.h"
 
 void test_ascii(void){
     char t = 'a';
