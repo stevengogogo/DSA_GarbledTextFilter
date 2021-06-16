@@ -9,5 +9,6 @@
 TEST_LIST = {
     {"Utility", test_utils},
     {"Ascii convertion", test_ascii},
+    {"Get occurrence", text_occurrence},
     {NULL, NULL} // Terminate the test
 };
