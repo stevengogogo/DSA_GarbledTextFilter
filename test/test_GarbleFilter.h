@@ -115,7 +115,7 @@ void find_leftsmall_garble_text(void){
     char text[2000] = "DSARANDOMTEXTISSOHARD\0";
     char garble[2000] = "RTTX\0";
     int head, tail;
-
+    TEST_CHECK(text[strlen(text)] == '\0');
     bool sat1 = leftist_smallest_garble_region(text, strlen(text), garble, strlen(garble), &tail, &head);
 
 

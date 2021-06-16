@@ -7,13 +7,11 @@
 
 int main()
 {
-    que pinT;
+     que pinT;
     que pinH;
 
-    char text[2000]="okayokayokay";
+    char text[2000]="okayokayokay\0";
     TextCompressMark(text, strlen(text), &pinT, &pinH);
-
-
     kill_que(&pinT);
     kill_que(&pinH);
 
