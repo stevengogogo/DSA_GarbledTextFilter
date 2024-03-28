@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['garble_20text_20filter_3a_20an_20application_20of_20robin_2dkarp_20algorithm_2',['Garble Text Filter: An application of Robin-Karp Algorithm',['../index.html',1,'']]]
+  ['definition_0',['Definition',['../index.html#autotoc_md2',1,'']]],
+  ['dymarr_1',['dymArr',['../structdymArr.html',1,'']]]
 ];
